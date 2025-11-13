@@ -95,29 +95,7 @@ Missing values were categorized into two types: Random Missing Values (RMV) and 
 Various established machine learning algorithms were used for classifications including ensemble methods like XGBoost and Random Forest, deep learning approaches like MLP, and classical models such as Logistic Regression and Support Vector Classifier (SVC). 
  
 ### 4. Results
- 
-The table below summarizes the performance metrics for all models used in the experiment, with values rounded to two decimal places.
-
-| Model | f1 | accuracy | precision | recall | specificity | auroc |
-|:---|---:|---:|---:|---:|---:|---:|
-| GaussianNB | 0.76 | 0.75 | 0.77 | 0.75 | 0.50 | 0.75 |
-| LogisticRegression | 0.73 | 0.78 | 0.72 | 0.78 | 0.12 | 0.72 |
-| MLP | 0.67 | 0.72 | 0.63 | 0.72 | 0.00 | 0.65 |
-| DecisionTree | 0.69 | 0.68 | 0.72 | 0.68 | 0.38 | 0.58 |
-| KNeighbors | 0.72 | 0.75 | 0.69 | 0.75 | 0.12 | 0.61 |
-| RandomForest | 0.70 | 0.72 | 0.68 | 0.72 | 0.12 | 0.61 |
-| AdaBoost | 0.68 | 0.70 | 0.67 | 0.70 | 0.12 | 0.47 |
-| SVC | 0.71 | 0.80 | 0.64 | 0.80 | 0.00 | 0.44 |
-| XGBoost | 0.71 | 0.80 | 0.64 | 0.80 | 0.00 | 0.55 |
-
-Across the nine evaluated classification models, the Gaussian Naive Bayes (GaussianNB) classifier demonstrated the most balanced performance, achieving the highest F1-score (0.760) and the best Area Under the Receiver Operating Characteristic (AUROC) value (0.754), alongside a specificity of 0.500. While the ensemble models XGBoost and SVC achieved the highest overall accuracy (0.800), this was paired with a concerning specificity of 0.000, indicating a complete inability to correctly identify negative cases. Conversely, the MLP model yielded the lowest F1-score (0.672), and the SVC model recorded the poorest discriminative power with the lowest AUROC (0.441). These results highlight a trade-off between maximizing raw accuracy and maintaining a balanced predictive capability across both classes, with the simplicity of the GaussianNB model providing superior generalization as measured by F1 and AUROC.
-
-###### SHAP Summary (Naive Bayes model)
-![image](images/naive_bayes_shap_summary.png)
-
-- `ca` was found to be the most important feature, having the largest average impact on the model output. `thal`, `exang`, and `oldpeak` were the next most significant factors. `fbs` (Fasting Blood Sugar) has the least average impact on the model.
-
-- `ca`: High values tend to have large positive SHAP values, indicating a high value for `ca` strongly increases the model's prediction . Low values have a strong negative impact. Similarly  high values for `thal` strongly push the prediction up. 
+--- See Results.md
 
 
 ## How to Run
