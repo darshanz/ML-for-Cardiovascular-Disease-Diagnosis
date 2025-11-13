@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This repository documents a machine learning project focused on **binary classification of cardiovascular disease (CVD)** risk using four distinct public datasets. The primary goal is to assess the model's robustness and generalization capability across datasets sourced from different geographical regions and patient populations.
+Comparison of performance of various ML models on **binary classification of cardiovascular disease (CVD)** using four distinct public datasets. The primary goal is to explore mutiple heart disease datasets and to assess perfomance of various traditional ML models on these datasets.
 
 ### Classification Goal
 
@@ -37,9 +37,8 @@ Data Source Information:
 
 ### 1. Data Preprocessing & Cleaning
 
-This project utilized a multi-stage data cleaning strategy tailored to the specific nature of missing values identified across the heart disease sub-datasets (Cleveland, Hungarian, Switzerland, and Long Beach VA).
-
-#### **1. Data Cleaning**
+ 
+#### **Data Cleaning**
 * The data was available in both raw and processed form with 13 features which were common in all 4 datasets, we used the 13-feature processed version of the dataset.
 
 #####  Attribute Information
@@ -70,7 +69,7 @@ This project utilized a multi-stage data cleaning strategy tailored to the speci
 ![image](images/label_counts.png)
 
 
-#### **2. Handling Missing Values (Two-Pronged Approach)**
+#### **Handling Missing Values (Two-Pronged Approach)**
 
 ##### Missing Values in four datasets
 ![image](images/missing_values.png)
