@@ -1,0 +1,76 @@
+models:
+  - name: "XGBoost"
+    type: "xgboost"
+    hyperparameters:
+      booster: "dart"
+      max_depth: 13
+      learning_rate: 0.2
+      subsample: 0.5
+      colsample_bytree: 0.9
+      min_child_weight: 5
+      gamma: 0.1
+      reg_lambda: 10
+      reg_alpha: 10
+      n_estimators: 200
+      random_state: 42
+      use_label_encoder: False
+      verbosity: 0
+      objective: "binary:logistic"
+      eval_metric: "logloss"
+      num_classes: 2
+      seed: 42
+      tree_method: "hist"
+      device: "cpu"
+
+  - name: "MLP"
+    type: "mlp"
+    hyperparameters:
+      hidden_layer_sizes: [100,]
+      activation: "relu"
+      solver: "adam"
+      max_iter: 500
+      random_state: 42
+      alpha: 1
+
+  - name: "LogisticRegression"
+    type: "logistic_regression"
+    hyperparameters:
+      solver: "liblinear"
+      C: 1.0
+      random_state: 42
+
+  - name: "DecisionTree"
+    type: "decision_tree"
+    hyperparameters:
+      max_depth: 5
+      random_state: 42
+  
+  - name: "KNeighbors"
+    type: "knn"
+    hyperparameters:
+      n_neighbors: 5
+      weights: "uniform"
+      algorithm: "auto"
+
+  - name: "GaussianNB"
+    type: "naive_bayes"
+    hyperparameters: {}
+
+  - name: "RandomForest"
+    type: "random_forest"
+    hyperparameters:
+      n_estimators: 100
+      max_depth: 7
+      random_state: 42
+      
+  - name: "AdaBoost"
+    type: "adaboost"
+    hyperparameters:
+      random_state: 42
+  
+  - name: "SVC"
+    type: "svc"
+    hyperparameters:
+      gamma: 2
+      C: 1
+      random_state: 42
