@@ -35,7 +35,7 @@ class ExperimentRunner:
 
         # Save Results
         os.makedirs("output", exist_ok=True)
-        output_path = os.path.join("output", "results.json")
+        output_path = os.path.join("output", f"{self.project_name}_results.json")
 
         with open(output_path, "w") as f:
             json.dump(model_results, f, indent=4)
