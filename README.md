@@ -50,7 +50,7 @@ This project uses **MLflow Tracking** to log:
         python main.py
     ```
      
-4.  **Run Experiments:**
+4.  **MLFlow UI**
     ```bash
     mlflow server --backend-store-uri sqlite:///cardiovascular.db --port 5000
 
