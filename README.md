@@ -9,6 +9,55 @@ Comparison of performance of various ML models on **binary classification of car
 * **Binary Target:** `0` (No CVD / Healthy) or `1` (At Risk / Presence of CVD).
 * **Original Data Adjustment:** Except Hungarian dataset, all three datasets initially contained multi-class risk levels (1-4). These have been merged into a single binary class (`1`) to focus solely on the presence or absence of the disease.
 
+
+
+## Experiment Tracking (MLflow)
+
+This project uses **MLflow Tracking** to log:
+- parameters (dataset, model type, hyperparameters)
+- metrics (accuracy, f1, precision, recall, AUROC, specificity)
+- artifacts (predictions, confusion matrix, explainability plots)
+- models (sklearn + XGBoost)
+
+[github[GitHub · Change is constant. GitHub keeps you ahead. · GitHub](https://github.com/)b.com/darshanz/ML-for-Cardiovascular-Disease-Diagnosis.git)) the performance of various traditional Machine Learning (ML) models for the binary classification of cardiovascular disease (CVD). The comparison is conducted using four distinct, publicly available heart disease datasets to assess model efficacy across diverse data sources.](https://github.com/darshanz/ML-for-Cardiovascular-Disease-Diagnosis.git)
+## How to Run
+
+### Prerequisites
+
+* Python 3.8+
+* Jupyter Notebook or JupyterLab
+* Dataset is assumed to be placed in `data/downloaded/` folder in the parent directory of this repo (this repo and data are in the same directory level).
+
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/darshanz/ML-for-Cardiovascular-Disease-Diagnosis.git
+    ML-for-Cardiovascular-Disease-Diagnosis.git
+    ```
+ 
+2.  **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ``` 
+
+3.  **Run Experiments:**
+     
+     1. Data Exploration and Missing Valie Imputation (Notebook)
+     2. Data Preparation for Training
+     3. Experiment scripts
+    ```bash
+        cd src
+        python main.py
+    ```
+     
+4.  **Run Experiments:**
+    ```bash
+    mlflow server --backend-store-uri sqlite:///cardiovascular.db --port 5000
+
+    ```
+
+![MLFlow UI](images/mlflow_ui.png)
+
 ## Datasets Used
 
 This project utilizes four well-known heart disease datasets, which were combined for comprehensive evaluation:
@@ -178,35 +227,3 @@ LIMITATIONS:
 
 The SHAP summary plot illustrates the feature importance and impact on the MLP model's output for the cleveland dataset, clearly indicating that features like `CA` and `Thal` have the strongest influence on the prediction. For instance, high values of CA and certain values of Thal (likely the 'fixed defect' or 'reversable defect' encodings) primarily drive the model towards a positive prediction (presence of heart disease).
 
-
-## How to Run
-
-### Prerequisites
-
-* Python 3.8+
-* Jupyter Notebook or JupyterLab
-* Dataset is assumed to be placed in `data/downloaded/` folder in the parent directory of this repo (this repo and data are in the same directory level).
-
-
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/darshanz/ML-for-Cardiovascular-Disease-Diagnosis.git
-    ML-for-Cardiovascular-Disease-Diagnosis.git
-    ```
- 
-2.  **Install dependencies:**
-    ```bash
-    pip install -r requirements.txt
-    ``` 
-
-3.  **Run Experiments:**
-     
-     1. Data Exploration and Missing Valie Imputation (Notebook)
-     2. Data Preparation for Training
-     3. Experiment scripts
-    ```bash
-        cd src
-        python main.py
-    ```
-     
- 

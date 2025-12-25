@@ -1,3 +1,4 @@
+experiment_name: "cardiovascular_disease_experiment"
 models:
   - name: "XGBoost"
     type: "xgboost"

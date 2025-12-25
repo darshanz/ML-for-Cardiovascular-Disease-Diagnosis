@@ -28,7 +28,7 @@ class Classifier():
         model.fit(X_train, y_train)
         y_pred = model.predict(X_test)
         y_prob = model.predict_proba(X_test)[:, 1] if hasattr(model, "predict_proba") else None
-        return y_test, y_pred, y_prob
+        return y_test, y_pred, y_prob, model
 
     def pred_xgb(self, X_train, y_train,  X_test, y_test, xgb_params): 
          
@@ -93,7 +93,7 @@ class Classifier():
             y_true, y_pred, y_prob, model = self.pred_xgb(X_train, y_train, X_test, y_test, params)
         else:
             model = self._initialize_model(model_type, params)
-            y_true, y_pred, y_prob = self.pred_sklearn_clf(model, X_train, y_train, X_test, y_test)
+            y_true, y_pred, y_prob, model = self.pred_sklearn_clf(model, X_train, y_train, X_test, y_test)
 
         dump(y_true, f"{save_path}/y_true.pkl")
         dump(y_pred, f"{save_path}/y_pred.pkl")
@@ -123,5 +123,6 @@ class Classifier():
         dump(self.metrics, f"{save_path}/metrics.pkl")
 
         logging.info(f"Model {name} done") 
+        self.model = model
         return self.metrics
  
