@@ -45,10 +45,18 @@ This project uses **MLflow Tracking** to log:
      1. Data Exploration and Missing Valie Imputation (Notebook)
      2. Data Preparation for Training
      3. Experiment scripts
+
+     To run all the experiments:
     ```bash
         cd src
         python main.py
+    ``` 
+ 
+    Or Run using MLFlow:,
+      ```bash
+        mlflow run .
     ```
+
      
 4.  **MLFlow UI**
     ```bash
