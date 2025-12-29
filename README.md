@@ -19,7 +19,7 @@ This project uses **MLflow Tracking** to log:
 - artifacts (predictions, confusion matrix, explainability plots)
 - models (sklearn + XGBoost)
 
-[github[GitHub · Change is constant. GitHub keeps you ahead. · GitHub](https://github.com/)b.com/darshanz/ML-for-Cardiovascular-Disease-Diagnosis.git)) the performance of various traditional Machine Learning (ML) models for the binary classification of cardiovascular disease (CVD). The comparison is conducted using four distinct, publicly available heart disease datasets to assess model efficacy across diverse data sources.](https://github.com/darshanz/ML-for-Cardiovascular-Disease-Diagnosis.git)
+ 
 ## How to Run
 
 ### Prerequisites
